@@ -7,8 +7,8 @@ let getJoke = () => {
   fetch(url)
     .then(data => data.json())
     .then(item => {
-      console.log(item);
-      console.log(item.setup);
+      // console.log(item);
+      // console.log(item.setup);
       jokeContainer.textContent = `${item.setup} ${item.delivery}`;
       jokeContainer.classList.add("fade");
     })
