@@ -10,7 +10,7 @@ let getJoke = () => {
       jokeContainer.textContent = `${item.setup} ${item.delivery}`;
       jokeContainer.classList.add("fade");
     })
-    .catch(err => console.log(err));
+    
 }
 
 btn.addEventListener("click", getJoke);
