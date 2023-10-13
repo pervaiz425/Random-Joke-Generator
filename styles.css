@@ -6,7 +6,8 @@
 }
 
 body{
-  background-color: #fab22e;
+  background-color: #3b3f6b;
+  /* #fab22e; */
 }
 
 .wrapper{
@@ -47,7 +48,8 @@ p{
 
 button{
   display: block;
-  background-color: #fab22e;
+  background-color:#3b3f6b;
+   /* #fab22e; */
   border: none;
   padding: 5px;
   font-size: 18px;
