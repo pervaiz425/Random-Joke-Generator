@@ -2,7 +2,8 @@
 // import ansiStyles from "../node_modules/chalk/source/vendor/ansi-styles/index.js";
 const jokeContainer = document.getElementById("joke");
 const btn = document.getElementById("btn");
-const url = "https://v2.jokeapi.dev/joke/Any?blacklistFlags=religious";
+// const url = "http://localhost:8888/joke";
+const url = "https://randomjokegenerator-byumar.netlify.app/joke"
 
 let jsonData; // Variable to store the loaded JSON data
 
@@ -29,12 +30,15 @@ let getJoke = () => {
   }
   //The fetch() returns a promise. Thatswhy I am using then to resolve it first and then use the data
   fetch(url)
-    .then(data =>
+    .then(data => {
       //The data.json() returns a promise so we cannot use it directly
       // console.log(data.json());
       // console.log(data);
       //we cannot directly use the data.json() because it returns a promise
-      data.json()
+      const dataJson = data.json();
+      console.log(dataJson);
+      return dataJson;
+    }
     )
     .then(item => {
       if (item.setup === undefined || item.delivery === undefined) {
@@ -47,6 +51,9 @@ let getJoke = () => {
       console.log(`%c${item.setup} ${item.delivery}`, "color: pink; font-size: 16px");
 ``
       jokeContainer.classList.add("fade");
+    })
+    .catch(err => {
+      console.error(`Error Code: ${err}`);
     });
 };
 
